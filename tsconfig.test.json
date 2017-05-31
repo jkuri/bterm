@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "lib": ["dom", "es6"],
-    "target": "es6",
+    "target": "es5",
     "module": "commonjs",
     "moduleResolution": "node",
     "declaration": false,
@@ -16,11 +16,10 @@
     ]
   },
   "files": [
-    "src/app/app.module.ts",
-    "src/main.aot.ts"
+    "src/main.ts"
   ],
   "exclude": [
-    "src/main.ts"
+    "src/main.aot.ts"
   ],
   "angularCompilerOptions": {
     "genDir": "./src/ngfactory",
