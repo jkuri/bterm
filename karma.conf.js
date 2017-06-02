@@ -7,12 +7,13 @@ module.exports = (config) => {
     basePath: '.',
     frameworks: ['jasmine'],
     files: [
+      { pattern: './karma.shim.js', watched: true },
       { pattern: './src/app/specs.js', watched: false },
       { pattern: './src/app/assets/**/*', watched: false, included: false, served: true, nocache: false }
     ],
     plugins: [
       require('karma-jasmine'),
-      require('karma-chrome-launcher'),
+      require('karma-electron-launcher'),
       require('karma-webpack'),
       require('karma-spec-reporter')
     ],
@@ -37,7 +38,7 @@ module.exports = (config) => {
     colors: true,
     logLevel: config.LOG_ERROR,
     autoWatch: false,
-    browsers: ['Chrome'],
+    browsers: ['Electron'],
     mime: { 'text/x-typescript': ['ts', 'tsx'] },
     singleRun: true,
     concurrency: 1,

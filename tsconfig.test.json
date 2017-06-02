@@ -10,19 +10,22 @@
     "experimentalDecorators": true,
     "sourceMap": true,
     "outDir": "./lib",
-    "rootDir": ".",
-    "typeRoots": [
-      "node_modules/@types"
-    ]
+    "rootDir": "."
   },
   "files": [
-    "src/main.ts"
+    "src/app/specs.js"
   ],
   "exclude": [
-    "src/main.aot.ts"
+    "src/main.ts",
+    "src/main.aot.ts",
+    "node_modules/**/*.d.ts",
+    "node_modules/**/*.ts"
   ],
   "angularCompilerOptions": {
     "genDir": "./src/ngfactory",
     "entryModule": "./src/app/app.module#AppModule"
+  },
+  "awesomeTypescriptLoaderOptions": {
+    "silent": true
   }
 }

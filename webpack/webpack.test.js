@@ -9,9 +9,6 @@ module.exports = function (options) {
     resolve: {
       extensions: ['.ts', '.js']
     },
-    entry: {
-      app: './src/main.ts'
-    },
     module: {
       rules: [
         { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader', exclude: [ root('node_modules/rxjs'), root('node_modules/@angular') ] },
@@ -51,6 +48,7 @@ module.exports = function (options) {
       'app': 'require("app")',
       'ipc': 'require("ipc")',
       'fs': 'require("fs")',
+      'os': 'require("os")',
       'buffer': 'require("buffer")',
       'system': '{}',
       'file': '{}',

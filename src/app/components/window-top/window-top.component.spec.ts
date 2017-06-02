@@ -10,6 +10,7 @@ import { DebugElement } from '@angular/core';
 import { WindowTopComponent } from './window-top.component';
 import { XtermService } from '../../services/xterm.service';
 import { ConfigService } from '../../services/config.service';
+import { PTYService } from '../../services/pty.service';
 
 describe(`WindowTopComponent`, () => {
   let comp: WindowTopComponent;
@@ -22,16 +23,15 @@ describe(`WindowTopComponent`, () => {
       declarations: [ WindowTopComponent ],
       providers: [
         XtermService,
-        ConfigService
+        ConfigService,
+        PTYService
       ],
     })
-    .compileComponents();
+    .compileComponents().then(() => {
+      fixture = TestBed.createComponent(WindowTopComponent);
+      comp = fixture.componentInstance;
+    });
   }));
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(WindowTopComponent);
-    comp = fixture.componentInstance;
-  });
 
   it(`should be readly initialized`, () => {
     fixture.detectChanges();

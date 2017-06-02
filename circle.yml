@@ -1,6 +1,6 @@
 machine:
   node:
-    version: 6
+    version: 8
 dependencies:
   pre:
     - sudo apt-get update; sudo apt-get install libfontconfig-dev
@@ -8,4 +8,4 @@ dependencies:
     - npm install && npm run build
 test:
   override:
-    - npm run lint && npm run test:e2e
+    - npm run lint && npm run test:e2e && npm run test:unit
